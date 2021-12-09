@@ -30,7 +30,6 @@ const friendData = [
     }
 ];
 
-
 addFriendButton.addEventListener('click', () => {
     // get the name from the input
     // create a new friend object
@@ -46,18 +45,17 @@ addFriendButton.addEventListener('click', () => {
     displayFriends();
 });
 
-
 addMushroomButton.addEventListener('click', () => {
     if (Math.random() > .5) {
         // alert('found a mushroom!');
-
+        console.log(`Found a mushroom!`);
         mushroomCount++;
         displayMushrooms();
     } else {
         // alert('no luck!');
+        console.log(`No Luck!`);
     }
 });
-
 
 function displayFriends() {
     // clear out the friends in DOM
@@ -89,7 +87,6 @@ function displayFriends() {
     }
     
 }
-
 
 function displayMushrooms() { 
     // clear out the mushroom div
