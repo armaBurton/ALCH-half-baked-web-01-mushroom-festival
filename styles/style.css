@@ -222,6 +222,8 @@ footer {
 }
 
 #outerDiv{
+    width: 110px;
+    height: 110px;
     background-color: orange;
     display: flex;
     justify-content: center;

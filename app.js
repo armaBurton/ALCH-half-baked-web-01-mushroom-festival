@@ -1,6 +1,7 @@
 // import functions and grab DOM elements
 import { renderMushroom, renderFriend } from './render-utils.js';
 import findFriendByName from './data-utils.js';
+import { namesArr } from './namesArr.js';
 
 const friendsEl = document.querySelector('.friends');
 const friendInputEl = document.getElementById('friend-input');
@@ -19,7 +20,7 @@ const friendData = [
     {
         name: 'Sarah',
         satisfaction: 2
-    },
+},
     {
         name: 'Missael',
         satisfaction: 3
@@ -30,11 +31,16 @@ const friendData = [
     }
 ];
 
+function getName(){
+    let randoNumbo = Math.ceil(Math.random() * 4946);
+    return namesArr[randoNumbo];
+}
+
 addFriendButton.addEventListener('click', () => {
     // get the name from the input
     // create a new friend object
     const friend = {
-        name: friendInputEl.value,
+        name: friendInputEl.value || getName(),
         satisfaction: Math.floor(Math.random() * 5)
     };
     // push it into the friends state array, passed in as an argument
@@ -65,15 +71,17 @@ function displayFriends() {
         const friendEl = renderFriend(friend);
         friendEl.addEventListener(`click`, () => {
             findFriendByName(friend.name, friendData);
-            console.log(friend);
             // this is a clickable list, so . . .
             // add an event listener to each friend
             // on click, go find the clicked friend in state
             // and if the friend's satisfaction level is below 3 and you have mushrooms left
-            if (mushroomCount > 0){
+            if (friend.satisfaction === 5){
+                //do nothing
+            } else if (mushroomCount > 0){
                 friend.satisfaction++;
                 mushroomCount--;
             }
+
             displayMushrooms();
             displayFriends();
         });

@@ -1,6 +1,7 @@
 export function renderMushroom() {
     const div = document.createElement('div');
     div.classList.add('mushroom');
+    console.log(div);
     return div;
 }
 
