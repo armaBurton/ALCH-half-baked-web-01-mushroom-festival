@@ -4,7 +4,7 @@ export function renderMushroom() {
     console.log(div);
     return div;
 }
-
+ 
 export function renderFriend(friend) {
     // make three elements: an outer div, a place for the name, and a place for an emoji
     // add friend, name, and emoji classes to the appropriate elements

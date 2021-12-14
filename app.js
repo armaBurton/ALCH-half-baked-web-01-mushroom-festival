@@ -2,7 +2,7 @@
 import { renderMushroom, renderFriend } from './render-utils.js';
 import findFriendByName from './data-utils.js';
 import { namesArr } from './namesArr.js';
-
+ 
 const friendsEl = document.querySelector('.friends');
 const friendInputEl = document.getElementById('friend-input');
 const mushroomsEl = document.querySelector('.mushrooms');
